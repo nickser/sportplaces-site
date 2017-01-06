@@ -1,4 +1,4 @@
 {
-  "product_api": "http://sport-places.in.ua:38080",
-  "functional_api": "http://sport-places.in.ua:38080/csg/rest/"
+  "product_api": "http://185.86.79.38:38080",
+  "functional_api": "http://185.86.79.38:38080/csg/rest/"
 }
