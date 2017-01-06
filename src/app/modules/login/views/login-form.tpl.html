@@ -1,0 +1,60 @@
+<form name="form" novalidate class="form-horizontal">
+	<md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Авторизация</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancelLogin()">
+          <!-- <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon> -->
+          <span class="glyphicon glyphicon-remove" aria-label="Close dialog"></span>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="Войти">
+          <md-content class="md-padding">
+            <md-input-container class="md-block">
+                <label>Email</label>
+                <input ng-model="user.login" required>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Пароль</label>
+                <input ng-model="user.password" type="password" required>
+            </md-input-container>
+				
+			<div class="alert alert-danger" ng-show="authError">{{authError}}</div>
+			
+			<md-button class="md-raised md-primary" ng-click="login()">Вход</md-button>
+			<md-button class="md-raised" ng-click="clearForm()">Очистить</md-button>
+				
+          </md-content>
+        </md-tab>
+        <md-tab label="Регистрация">
+          <md-content class="md-padding">
+            <md-input-container class="md-block">
+                <label>Email</label>
+                <input ng-model="email" ng-pattern="/^.+@.+\..+$/" required>
+                <div ng-messages="userForm.email.$error" ng-hide="showHints">
+		        	<div ng-message-exp="['required', 'pattern']">
+		              Your email must be between 10 and 100 characters long and look like an e-mail address.
+		         	</div>
+		        </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Пароль</label>
+                <input ng-model="password" type="password">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Пароль еще раз</label>
+                <input ng-model="password" type="password">
+            </md-input-container>
+
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-dialog-content>
+</form>
+

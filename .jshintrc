@@ -1,0 +1,15 @@
+{
+  "browser": true,
+  "esnext": true,
+  "globals": {
+    "$": true,
+    "angular": true
+  },
+  "undef": true,
+  "unused": true,
+  "indent": 2,
+  "devel": true,
+  "expr": true,
+  "loopfunc": true,
+  "supernew": true
+}

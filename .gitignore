@@ -1,0 +1,12 @@
+*.sw*
+*~
+logs/*
+!.gitkeep
+build/*
+dist/*
+node_modules/
+vendor/
+bower_components/
+tmp
+.DS_Store
+.idea

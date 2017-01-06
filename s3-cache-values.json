@@ -1,0 +1,24 @@
+{
+  "dev": {
+    "index": "private, no-cache, s-maxage=0, max-age=0",
+    "js": "86400",
+    "css": "86400",
+    "fonts": "31536000",
+    "icons": "31536000",
+    "images": "31536000",
+    "svg": "31536000",
+    "languages": "31536000",
+    "other":"31536000"
+  },
+  "pre-live": {
+    "index": "private, no-cache, s-maxage=0, max-age=0",
+    "js": "86400",
+    "css": "86400",
+    "fonts": "31536000",
+    "icons": "31536000",
+    "images": "31536000",
+    "svg": "31536000",
+    "languages": "31536000",
+    "other":"31536000"
+  }
+}

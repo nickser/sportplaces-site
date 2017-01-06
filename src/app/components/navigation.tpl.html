@@ -1,0 +1,49 @@
+<div ng-controller="NavigationController as ctrl" ng-cloak>
+<!--<div ng-cloak>-->
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-fixed-top topnav"
+		role="navigation">
+		<div class="container topnav">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand topnav" ui-sref="main">
+					<div class="brand-margin">
+						<img src="assets/images/city-sport.png" />
+					</div>
+				</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="md-accent md-subhead" ui-sref="manager"
+						ng-if="isManagerAuth()"><i class="fa fa-pencil-square-o"></i> Управление</a>
+					</li>
+					<li><a class="md-subhead" href="#" ng-click="ctrl.logout()"
+						ng-if="isAuthenticated()"><i class="fa fa-sign-out"></i> Выход</a>
+						<a class="md-subhead" href="#" ng-click="ctrl.login()"
+						ng-if="!isAuthenticated()"><i class="fa fa-sign-in"></i> Вход</a>
+						<!--<a class="md-subhead md-subhead" href="#" ui-sref="login"-->
+						   <!--ng-if="!isAuthenticated()"><i class="fa fa-sign-in"></i> Вход</a>-->
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /.container -->
+	</nav>
+
+
+	<!-- Header -->
+
+	<!-- /.banner -->
+
+	<!-- Footer -->
+
+
+</div>

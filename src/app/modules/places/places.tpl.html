@@ -1,0 +1,124 @@
+<div class="content-section-common ng-scope" ng-cloak>
+	<section layout="row" flex>
+		<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+			<md-toolbar class="md-theme-indigo">
+				<h1 class="md-toolbar-tools">Фильтры</h1>
+			</md-toolbar>
+			<!--<md-content layout-padding>-->
+			<md-content layout-padding ng-controller="LeftCtrl as ctrl">
+	        	<md-button ng-click="ctrl.close()" class="md-primary" hide-gt-md>
+	          		Скрыть фильтры
+	        	</md-button>
+	        	<p hide-md show-gt-md>
+	          		Здесь находятся наши фильтры, нужно всякого понадобавлять!
+	        	</p>
+	        
+	        	<h3>
+	      			RGB <span ng-attr-style="border: 1px solid #333; background: rgb({{color.red}},{{color.green}},{{color.blue}})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	    		</h3>
+			    <div layout>
+			    	<div flex="10" layout layout-align="center center">
+			    		<span class="md-body-1">R</span>
+				    </div>
+				    	<md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider" class>
+				      	</md-slider>
+				    <div flex="20" layout layout-align="center center">
+				    	<input flex type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider">
+				    </div>
+			    </div>
+			    <div layout>
+			      <div flex="10" layout layout-align="center center">
+			        <span class="md-body-1">G</span>
+			      </div>
+			      <md-slider flex ng-model="color.green" min="0" max="255" aria-label="green" id="green-slider" class="md-accent">
+			      </md-slider>
+			      <div flex="20" layout layout-align="center center">
+			        <input flex type="number" ng-model="color.green" aria-label="green" aria-controls="green-slider">
+			      </div>
+			    </div>
+			    <div layout>
+			      <div flex="10" layout layout-align="center center">
+			        <span class="md-body-1">B</span>
+			      </div>
+			      <md-slider flex ng-model="color.blue" min="0" max="255" aria-label="blue" id="blue-slider" class="md-primary">
+			      </md-slider>
+			      <div flex="20" layout layout-align="center center">
+			        <input flex type="number" ng-model="color.blue" aria-label="blue" aria-controls="blue-slider">
+			      </div>
+			    </div>
+			    <h3>Rating: {{rating}}/5 - demo of theming classes</h3>
+			    <div layout>
+			      <div flex="10" layout layout-align="center center">
+			        <span class="md-body-1">default</span>
+			      </div>
+			      <md-slider flex md-discrete ng-model="rating1" step="1" min="1" max="5" aria-label="rating">
+			      </md-slider>
+			    </div>
+			    <div layout>
+			     	<div flex="10" layout layout-align="center center">
+			        	<span class="md-body-1">md-warn</span>
+			    	</div>
+			    	<md-slider flex class="md-warn" md-discrete ng-model="rating2" step="1" min="1" max="5" aria-label="rating">
+			    	</md-slider>
+			    </div>
+			    <div layout>
+			    	<div flex="10" layout layout-align="center center">
+			     		<span class="md-body-1">md-primary</span>
+			    	</div>
+			    	<md-slider flex class="md-primary" md-discrete ng-model="rating3" step="1" min="1" max="5" aria-label="rating">
+			    	</md-slider>
+			    </div>
+	    		<h3>Disabled</h3>
+	    		<md-slider ng-model="disabled1" ng-disabled="true" aria-label="Disabled 1"></md-slider>
+				<md-slider ng-model="disabled2" ng-disabled="true" aria-label="Disabled 2"></md-slider>
+	    		<h3>Disabled, Discrete</h3>
+	    		<md-slider ng-model="disabled1" ng-disabled="true" step="3" md-discrete min="0" max="10" aria-label="Disabled discrete 1"></md-slider>
+	    		<md-slider ng-model="disabled2" ng-disabled="true" step="10" md-discrete aria-label="Disabled discrete 2"></md-slider>
+	    	</md-content>
+		</md-sidenav>
+		
+		<md-content flex layout-padding>
+	  		<div layout="column">
+				<md-button ng-click="toggleLeft()"
+				            class="md-button md-raised md-primary affixed-button" hide-gt-md>
+				            Фильтры
+				</md-button>
+		  	</div> 	
+
+ 			<md-card ng-repeat="item in places">
+				<md-card-header>
+					<span class="md-headline">{{item.name}}</span>
+				</md-card-header>
+		    	<md-card-title>
+		        	<md-card-title-text>
+		            	<!-- <span class="md-title">Спорт площадка на пр. Петровского 3, "Коробка"</span> -->		            	
+						<p><span class="md-subhead">Адрес: </span> {{item.adress}}</p>
+						<p><span class="md-subhead">Покрытие: </span> {{item.coating}}</p>
+						<span class="md-subhead">Рейтинг: </span>
+						<uib-rating class="am-accent-color" ng-model="item.rating" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" aria-labelledby="default-rating"></uib-rating>
+		          	</md-card-title-text>
+		        	<md-card-title-media>
+		            	<div class="md-media-lg card-media main-photo-size">
+		            		<img ng-src="{{imagePath(item)}}" alt="Place image">
+		            	</div>
+		          	</md-card-title-media>
+				</md-card-title>
+		        <md-card-content>
+		        	<span class="md-title pull-right">Стоимость от {{item.cost}} грн/ч</span>
+				</md-card-content>
+		        <md-card-actions layout="row" layout-align="start center">
+					<md-card-icon-actions>
+		            	<md-button class="md-icon-button" aria-label="Favorite">
+		               		<md-icon class="fa fa-heart am-warn-color"></md-icon>
+		            	</md-button>
+		            	<md-button class="md-icon-button" aria-label="Share">
+		              		<md-icon class="fa fa-share am-primary-color"></md-icon>
+		            	</md-button>
+					</md-card-icon-actions>
+					<md-button class="md-raised md-accent"><i class="fa fa-expand  am-white-color"></i><span class="am-white-color"> Подробнее</span></md-button>
+					<md-button class="md-raised md-primary"><i class="fa fa-check-square-o"></i> Бронирование</md-button>
+				</md-card-actions>	        
+			</md-card>
+		</md-content>
+	</section>
+</div>

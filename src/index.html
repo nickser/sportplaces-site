@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="app" ng-controller="AppController as ctrl" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="app" ng-controller="AppController as ctrl" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="app" ng-controller="AppController as ctrl" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="app" ng-controller="AppController as ctrl" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/"/>
+    <meta name="fragment" content="!"/>
+
+    <title>Бронирование площадок - Город спорта</title>
+    <meta name="keywords"
+          content="спорт площадка,футбол,баскетбол,аренда,аренда площадки,бронирование площадки,бронирование поля"/>
+    <!--<meta name="description" content="Discover a great variety of latest, affordable fashion styles online and mobile with trendeo. Shop dresses, tops, shoes, shorts and accessories for women and men" />-->
+    <meta name="robots" content="index"/>
+
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Sun, 24 jan 2010 12:28:36 GMT">
+    <meta http-equiv="pragma" content="no-cache"/>
+
+    <meta property="og:url" content="http://sport-places.in.ua"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Сервис для бронирование спортивных площадок - Sport-places"/>
+    <!--<meta property="og:description"   content="Discover a great variety of latest, affordable fashion styles online and mobile with trendeo. Shop dresses, tops, shoes, shorts and accessories for women and men" />-->
+    <meta property="og:image" content="assets/favicon.png" />
+
+    <!--<link rel="stylesheet" href="app.css">-->
+
+    <meta name="apple-mobile-web-app-title" content="sport-places.in.ua"/>
+    <meta name="application-name" content="sport-places.in.ua"/>
+    <!--<meta name="msapplication-TileColor" content="#da532c"/>-->
+    <!--<meta name="msapplication-TileImage" content="assets/icons/mstile-144x144.png"/>-->
+    <!--<meta name="msapplication-config" content="assets/icons/browserconfig.xml"/>-->
+    <meta name="theme-color" content="#ffffff"/>
+
+    <!-- compiled CSS -->
+    <% styles.forEach(function(file) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>"/>
+    <% }); %>
+
+    <!-- compiled JavaScript -->
+    <% scripts.forEach(function(file) { %>
+    <script type="text/javascript" src="<%= file %>"></script>
+    <% }); %>
+
+    <!-- liveReload if needed -->
+    <!--<% lr.forEach(function(file) { %>-->
+    <!--<script type="text/javascript" src="<%= file %>"></script>-->
+    <!--<% }); %>-->
+
+</head>
+<body>
+
+    <ng-include src="'components/navigation.tpl.html'"></ng-include>
+    <!--<div ng-include="'components/navigation.tpl.html'"></div>-->
+
+    <div ui-view="main">
+        <!--<div class="margin" ng-if="!loading" ui-view="main"></div>-->
+        <!--<div ng-if="loading" class="loading-spinner"></div>-->
+    </div>
+
+    <ng-include src="'components/footer.tpl.html'"></ng-include>
+    <!--<div ng-include="'components/footer.tpl.html'"></div>-->
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+
+</body>
+</html>

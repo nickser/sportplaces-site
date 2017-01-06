@@ -1,0 +1,187 @@
+<div ng-cloak>
+	<a name="about" href="#about"></a>
+	<div class="intro-header">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="intro-message">
+						<h1>С нами проще!</h1>
+						<h3>Бронируйте спортивные площадки</h3>
+						<hr class="intro-divider">
+						<div class="intro-search-filter hide-sm">
+							<!-- <div class="md-inline-form"> -->
+							<md-content>
+								<md-tabs md-dynamic-height md-border-bottom>
+									<md-tab label="Заказ площадки">
+										<md-content class="md-padding">
+											<form name="reservForm">
+
+												<div layout-gt-sm="row" layout-align="center center">
+													<md-input-container class="md-block" flex-gt-sm>
+													<label>Город</label> <md-select ng-model="placeFinder.city">
+													<md-option ng-repeat="city in cities | orderBy:'name'" ng-value="city.idCity" ng-selected="city.idCity == 0" ng-bind="city.name">
+													</md-option> </md-select> </md-input-container>
+													<div flex="5" hide-xs hide-sm>
+														<!-- Spacer //-->
+													</div>
+													<md-input-container class="md-block" flex-gt-sm>
+													<label>Вид спорта</label> <md-select ng-model="placeFinder.sport">
+													<md-option ng-repeat="sport in sports | orderBy:'name'" ng-value="sport.idSport" ng-selected="sport.idSport == 0" ng-bind="sport.name">
+													</md-option> </md-select> </md-input-container>
+													<div flex="5" hide-xs hide-sm>
+														<!-- Spacer //-->
+													</div>
+													<md-datepicker ng-model="placeFinder.startDate"
+														md-placeholder="Даты начала" md-min-date="minDate"> </md-datepicker>
+													<div flex="5" hide-xs hide-sm>
+														<!-- Spacer //-->
+													</div>
+													<md-datepicker ng-model="placeFinder.endnDate"
+														md-placeholder="Дата конца" md-min-date="minDate"> </md-datepicker>
+													<div flex="5" hide-xs hide-sm>
+														<!-- Spacer //-->
+													</div>
+													<!--<md-button class="md-raised md-primary" ng-click="link('main/places/'+getSelectedCity()+'/'+getSelectedSport())" ng-disabled="!isDisabled()">Найти</md-button>-->
+													<md-button class="md-raised md-primary" ng-disabled="!isDisabled()" ui-sref="places({ idCity: placeFinder.city, idSport: placeFinder.sport})">Найти</md-button>
+
+												</div>
+											</form>
+										</md-content>
+									</md-tab>
+									<md-tab label="Игра/Тренировка">
+										<md-content class="md-padding">
+											<form name="gameForm">
+
+												<div layout-gt-sm="row" layout-align="center center">
+													<md-input-container class="md-block" flex-gt-sm>
+													<label>Тип события</label> <md-select ng-model="gameFinder.eventType">
+													<md-option ng-repeat="eventType in eventTypes" value="{{eventType.idEventType}}" ng-bind="eventType.name">
+													</md-option> </md-select> </md-input-container>
+													<div flex="5" hide-xs hide-sm>
+														<!-- Spacer //-->
+													</div>
+													<md-input-container class="md-block" flex-gt-sm>
+													<label>Вид спорта</label> <md-select ng-model="gameFinder.sport">
+													<md-option ng-repeat="sport in sports" value="{{sport.idSport}}" ng-bind="sport.name">
+													</md-option> </md-select> </md-input-container>
+													<div flex="5" hide-xs hide-sm>
+														<!-- Spacer //-->
+													</div>
+													<md-input-container class="md-block" flex-gt-sm>
+													<label>Действие</label> <md-select ng-model="gameFinder.action">
+													<md-option ng-repeat="action in actions" value="{{action.idAction}}" ng-bind="action.name">
+													</md-option> </md-select> </md-input-container>
+													<div flex="5" hide-xs hide-sm>
+														<!-- Spacer //-->
+													</div>
+
+													<md-datepicker ng-model="gameFinder.submissionDate"
+														md-placeholder="Выбор даты" md-min-date="minDate"> </md-datepicker>
+													<div flex="5" hide-xs hide-sm>
+														<!-- Spacer //-->
+													</div>
+													<md-button class="md-raised md-primary" ui-sref="games" ng-disabled="!isDisabled()">Найти</md-button>
+												</div>
+											</form>
+										</md-content>
+									</md-tab>
+								</md-tabs>
+							</md-content>
+							<!-- </div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.intro-header -->
+
+	<!-- Page Content -->
+
+	<a name="services" href="#services"></a>
+	<div class="content-section-b">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+					<hr class="section-heading-spacer">
+					<div class="clearfix"></div>
+					<h2 class="section-heading">Как это работает?</h2>
+					<p class="lead">В представленном выше фильтре укажите город,
+						вид спорта и промежуток времени! В полученном списке, выберете
+						площадку, укажите часы брони и площадка ваша!</p>
+				</div>
+				<div class="col-lg-5 col-sm-pull-6  col-sm-6">
+					<img class="img-responsive" src="assets/images/laptop-512.png" alt="">
+				</div>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.content-section-b -->
+
+	<div class="content-section-a" ng-if="isSearching()">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-5 col-sm-6">
+					<hr class="section-heading-spacer">
+					<div class="clearfix"></div>
+					<h2 class="section-heading">
+						Google Web Fonts and<br>Font Awesome Icons
+					</h2>
+					<p class="lead">
+						This template features the 'Lato' font, part of the <a
+							target="_blank" href="http://www.google.com/fonts">Google Web
+							Font library</a>, as well as <a target="_blank"
+							href="http://fontawesome.io">icons from Font Awesome</a>.
+					</p>
+				</div>
+				<div class="col-lg-5 col-lg-offset-2 col-sm-6">
+					<!-- <img class="img-responsive" src="img/phones.png" alt=""> -->
+				</div>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+	<!-- /.content-section-a -->
+
+	<a name="contact" href="#contact"></a>
+	<div class="banner">
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-6">
+					<h2>Присоединяйся к Городу Спорта:</h2>
+				</div>
+				<div class="col-lg-6">
+					<ul class="list-inline banner-social-buttons">
+						<li><a href="https://vk.com/club_sportplace"
+							class="btn btn-default btn-lg"><i class="fa fa-vk fa-fw"></i>
+								<span class="network-name">VK</span></a></li>
+						<li><a href="https://twitter.com"
+							class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i>
+								<span class="network-name">Twitter</span></a></li>
+						<li><a href="https://www.linkedin.com" class="btn btn-default btn-lg"><i
+								class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<!-- /.container -->
+
+	</div>
+</div>
