@@ -14,7 +14,7 @@
 
   /* @ngInject */
   function configureBlock($compileProvider, $urlRouterProvider,
-                          $locationProvider, $ariaProvider, $httpProvider, $mdThemingProvider, ngMetaProvider, jwtOptionsProvider) {
+                          $locationProvider, $ariaProvider, $httpProvider, $mdThemingProvider, ngMetaProvider, jwtOptionsProvider, AnalyticsProvider, URLS) {
 
     $mdThemingProvider.definePalette('amazingPaletteName', {
       '50': 'CBE3FA',
@@ -41,6 +41,8 @@
     $mdThemingProvider.theme('default')
         .primaryPalette('amazingPaletteName')
         .accentPalette('deep-orange');
+
+    AnalyticsProvider.setAccount(URLS.gaAPI);
 
     $locationProvider.html5Mode(true).hashPrefix('!');
 

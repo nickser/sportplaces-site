@@ -118,6 +118,8 @@ module.exports = {
             'vendor/ngMeta/dist/ngMeta.min.js',
             // 'vendor/re-tree/re-tree.min.js',
             // 'vendor/ng-device-detector/ng-device-detector.min.js'
+
+            'vendor/angular-google-analytics/dist/angular-google-analytics.min.js',
         ],
         css: [
             'vendor/angular-material/angular-material.min.css',

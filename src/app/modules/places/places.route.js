@@ -30,6 +30,24 @@
               controller: 'PlacesController as ctrl'
             }
           },
+          resolve: {
+            foundPlaces: ['$state','$stateParams', '$timeout', '$q', 'PlacesResource', function($state, $stateParams, $timeout, $q, PlacesResource) {
+              var deferred = $q.defer();
+
+              $timeout(function() {
+                if ($stateParams.idCity !== null && $stateParams.idSport !== null) {
+                  PlacesResource.getPlaces($stateParams, function (response) {
+                    deferred.resolve(response);
+                  });
+                } else {
+                  $state.go('main');
+                  deferred.reject();
+                }
+              });
+
+              return deferred.promise;
+            }]
+          },
           meta: {
             title: 'Places page',
             robots: 'noindex, nofollow'

@@ -66,6 +66,10 @@
 
     <div ui-view="main"></div>
 
+    <div ng-if="loading" class="loading-spinner">
+        <md-progress-circular class="md-accent" md-diameter="60" ></md-progress-circular>
+    </div>
+
     <ng-include src="'components/footer.tpl.html'"></ng-include>
 
     <!-- compiled JavaScript -->

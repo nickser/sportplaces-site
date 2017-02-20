@@ -36,6 +36,7 @@
 
   /* @ngInject */
   function AppController($scope, $rootScope, $location, $anchorScroll, security) {
+    $rootScope.loading = false;
     // $scope.loading = true;
     $rootScope.groups = [];
     // $scope.cooBlock = false;

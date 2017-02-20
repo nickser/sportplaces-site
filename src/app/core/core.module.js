@@ -13,7 +13,7 @@
         'ngMeta',
         'ngAria',
         'ngResource',
-          'duScroll',
+        'duScroll',
         // 'ngTouch',
         'ngMaterial',
 
@@ -40,6 +40,8 @@
         'ui-rangeSlider',
         'ui.select',
         // 'ng.deviceDetector'
+
+        'angular-google-analytics'
       ]);
 
 })();

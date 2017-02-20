@@ -16,6 +16,7 @@
   function httpInterceptor($rootScope, $injector, $cookies, $q, store) {
     return {
       request: function(config) {
+        $rootScope.loading = true;
         config.headers = config.headers || {};
         if (store.get('token')) {
           config.headers.Authorization = 'Bearer ' + store.get('token');
@@ -31,7 +32,10 @@
       },
       response: function(response) {
         var $http = $injector.get('$http');
-        var favoriteCookie = $cookies.get('session');
+
+        if ($http.pendingRequests.length === 0) {
+          $rootScope.loading = false;
+        }
 
         // if (angular.isArray(response.data)) {
         //   response.data = {
@@ -43,6 +47,10 @@
       },
       responseError: function(response) {
         var $http = $injector.get('$http');
+
+        if ($http.pendingRequests.length === 0) {
+          $rootScope.loading = false;
+        }
 
         return response;
       }

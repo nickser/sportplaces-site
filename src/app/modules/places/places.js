@@ -13,11 +13,12 @@
       .controller('LeftCtrl', LeftCtrl);
 
   /* @ngInject */
-  function PlacesController($scope, $timeout, $mdSidenav, PlacesResource, URLS, $stateParams) {
+  function PlacesController($scope, $timeout, $mdSidenav, PlacesResource, URLS, $stateParams, foundPlaces) {
     /** @type {!Object} */ var ctrl = this;
     $scope.test = {};
 
-    $scope.places = PlacesResource.getPlaces($stateParams);
+    // $scope.places = PlacesResource.getPlaces($stateParams);
+    $scope.places = foundPlaces;
 
 //	$scope.placesResultList = placesResultList;
 //	$scope.placesList = placesList;

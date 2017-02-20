@@ -1,4 +1,5 @@
 {
   "product_api": "http://localhost:38080",
   "functional_api": "http://localhost:38080/csg/rest/"
+  "ga_code": "UA-92312556-2"
 }
