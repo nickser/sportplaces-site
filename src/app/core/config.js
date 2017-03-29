@@ -14,7 +14,7 @@
 
   /* @ngInject */
   function configureBlock($compileProvider, $urlRouterProvider,
-                          $locationProvider, $ariaProvider, $httpProvider, $mdThemingProvider, ngMetaProvider, jwtOptionsProvider, AnalyticsProvider, URLS) {
+                          $locationProvider, $ariaProvider, $httpProvider, $mdThemingProvider, ngMetaProvider, jwtOptionsProvider, AnalyticsProvider, uiGmapGoogleMapApiProvider, URLS) {
 
     $mdThemingProvider.definePalette('amazingPaletteName', {
       '50': 'CBE3FA',
@@ -77,6 +77,12 @@
       tabindex: true,
       bindKeypress: true,
       bindRoleForClick: true
+    });
+
+    uiGmapGoogleMapApiProvider.configure({
+      key: URLS.gmAPI,
+      v: '3.20', //defaults to latest 3.X anyhow
+      libraries: 'weather,geometry,visualization'
     });
 
   }

@@ -120,6 +120,10 @@ module.exports = {
             // 'vendor/ng-device-detector/ng-device-detector.min.js'
 
             'vendor/angular-google-analytics/dist/angular-google-analytics.min.js',
+
+            'vendor/lodash/dist/lodash.min.js',
+            'vendor/angular-simple-logger/dist/angular-simple-logger.min.js',
+            'vendor/angular-google-maps/dist/angular-google-maps.min.js'
         ],
         css: [
             'vendor/angular-material/angular-material.min.css',

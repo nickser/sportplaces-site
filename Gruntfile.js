@@ -343,6 +343,7 @@ module.exports = function(grunt) {
             '\t\t\t\tproductAPI: \'' + envConfig.product_api + '\',\n' +
             '\t\t\t\tfunctionalAPI: \'' + envConfig.functional_api + '\',\n' +
             '\t\t\t\tgaAPI: \'' + envConfig.ga_code + '\',\n' +
+            '\t\t\t\tgmAPI: \'' + envConfig.gm_api + '\',\n' +
             '\t\t\t});\n' +
             '})();\n');
     });

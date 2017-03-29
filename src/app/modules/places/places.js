@@ -17,6 +17,8 @@
     /** @type {!Object} */ var ctrl = this;
     $scope.test = {};
 
+    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+
     // $scope.places = PlacesResource.getPlaces($stateParams);
     $scope.places = foundPlaces;
 

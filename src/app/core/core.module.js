@@ -41,7 +41,9 @@
         'ui.select',
         // 'ng.deviceDetector'
 
-        'angular-google-analytics'
+        'angular-google-analytics',
+          // 'uiGmapGoogleMapApi'
+          'uiGmapgoogle-maps'
       ]);
 
 })();

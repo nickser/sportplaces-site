@@ -83,7 +83,11 @@
 				            class="md-button md-raised md-primary affixed-button" hide-gt-md>
 				            Фильтры
 				</md-button>
-		  	</div> 	
+		  	</div>
+
+			<div class="md-padding">
+				<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+			</div>
 
  			<md-card ng-repeat="item in places">
 				<md-card-header>

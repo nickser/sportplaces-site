@@ -1,5 +1,6 @@
 {
   "product_api": "http://sport-places.in.ua/api",
   "functional_api": "http://sport-places.in.ua/api/csg/rest/",
-  "ga_code": "UA-92312556-2"
+  "ga_code": "UA-92312556-2",
+  "gm_api": "AIzaSyCnJqmhbgft9XVQN3ROTHzoYEfjLC_tqkM"
 }
