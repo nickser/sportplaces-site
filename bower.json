@@ -30,7 +30,6 @@
     "jquery-touchswipe": "^1.6.18",
     "angular-material": "^1.1.1",
     "font-awesome": "^4.6.3",
-    "kendo-ui-all": "*",
     "auth0-lock": "^10.3.0",
     "angular-lock": "^1.0.2",
     "angular-jwt": "^0.1.3",
